@@ -42,4 +42,33 @@ Load environment variables in the script:
 from dotenv import load_dotenv
 import os
 load_dotenv()
-API_KEY = os.ge
+API_KEY = os.getenv("GROQ_API_KEY")
+```
+
+### 5️⃣ Run the Chatbot
+```sh
+streamlit run app.py
+```
+
+## 📂 Project Structure
+```
+HDFC-LangGraph-QA-Chatbot/
+│── data/                  # Store mutual fund documents
+│── src/                   # Core chatbot logic
+│   ├── RAG_with_Langgraph.py  # RAG implementation with LangGraph
+│── app.py                 # Streamlit frontend
+│── requirements.txt        # Dependencies
+│── .gitignore              # Ignore sensitive files
+│── .env.example            # Template for environment variables
+│── README.md               # Project documentation
+```
+
+## 🤝 Contributing
+Feel free to open issues or submit pull requests to enhance the project!
+
+## 📜 License
+This project is licensed under the MIT License.
+
+---
+
+
