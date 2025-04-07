@@ -50,6 +50,9 @@ API_KEY = os.getenv("GROQ_API_KEY")
 streamlit run app.py
 ```
 
+## 📸 Screenshots
+![chatbot responses](outputs/output1.png)
+
 ## 📂 Project Structure
 ```
 HDFC-LangGraph-QA-Chatbot/
