@@ -1,7 +1,6 @@
 # Excluded folders
 exclude/
 chroma_db/
-.claude/
 
 # Environment
 .env
