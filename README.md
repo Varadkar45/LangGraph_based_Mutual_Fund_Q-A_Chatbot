@@ -109,14 +109,13 @@ The vector store is built automatically on first run and persisted to `chroma_db
 
 ```
 LangGraph_based_Mutual_Fund_Q-A_Chatbot/
-|-- factsheets/                    # Input PDFs (not tracked by git)
-|-- 2.0/                           # Version 2.0 (latest)
+|-- factsheets/                    # Input PDFs
+|-- 2.0/                           # Latest version
 |   |-- rag_pipeline.py            # LangGraph graph, ChromaDB, all 7 nodes
 |   |-- app.py                     # Streamlit UI
 |   |-- requirements.txt           # Dependencies
-|   +-- workflow_diagram.png       # Auto-generated LangGraph diagram
-|-- RAG_with_Langgraph.py          # Version 1.0 (original)
-|-- app.py                         # Version 1.0 UI
+|   |-- workflow_diagram.png       # Auto-generated LangGraph diagram
+|   +-- outputs/                   # Screenshots
 +-- README.md
 ```
 
@@ -126,19 +125,9 @@ LangGraph_based_Mutual_Fund_Q-A_Chatbot/
 
 ![LangGraph Workflow](2.0/workflow_diagram.png)
 
----
+## 📸 Screenshots
 
-## 🆕 v2.0 vs v1.0
-
-| | v1.0 | v2.0 |
-|---|---|---|
-| Vector Store | FAISS (in-memory) | ChromaDB (persistent) |
-| Embeddings | HuggingFace (online) | snowflake-arctic-embed2 via Ollama (local) |
-| LangGraph nodes | 3 (linear pipeline) | 7 (with conditional branches + retry loop) |
-| General conversation | Not handled (confused) | Router node handles it gracefully |
-| Retrieval failure | Generates anyway | Rewrites query and retries (Corrective RAG) |
-| NAV accuracy | Incorrect (Direct Plan values) | Fixed via dedicated NAV summary extraction |
-| Chat history | Not maintained | Full multi-turn with query reformulation |
+![Chatbot Output](2.0/outputs/output1.png)
 
 ---
 
