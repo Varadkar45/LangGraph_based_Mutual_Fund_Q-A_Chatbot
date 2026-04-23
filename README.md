@@ -127,7 +127,13 @@ LangGraph_based_Mutual_Fund_Q-A_Chatbot/
 
 ## 📸 Screenshots
 
-![Chatbot Output](2.0/outputs/output1.png)
+![Homepage](2.0/outputs/homepage.png)
+
+![Question 1](2.0/outputs/Question_1.png)
+
+![Question 2](2.0/outputs/Question_2.png)
+
+![Question 3](2.0/outputs/Question_3.png)
 
 ---
 
