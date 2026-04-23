@@ -34,7 +34,6 @@ This is **Corrective RAG** - if retrieval fails the relevance check, the query i
 - **Corrective RAG loop** - automatic query rewriting on retrieval failure (up to 2 retries)
 - **Multi-turn conversation** - chat history maintained across turns; follow-up questions resolved to standalone queries
 - **Accurate NAV retrieval** - dedicated NAV summary documents pre-extracted from the two-column PDF layout, preventing portfolio text from dominating similarity search
-- **Per-source retrieval** - fetches from each of the 3 factsheets independently, guaranteeing all months appear in context
 - **LLM fallback** - Groq (primary) with local Ollama as fallback via `.with_fallbacks()`
 - **Styled Streamlit UI** - chat cards with Q/A layout, timestamps, and conversation history
 
