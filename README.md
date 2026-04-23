@@ -127,13 +127,17 @@ LangGraph_based_Mutual_Fund_Q-A_Chatbot/
 
 ## 📸 Screenshots
 
+**Homepage — Streamlit UI with sidebar and chat input**
 ![Homepage](2.0/outputs/homepage.png)
 
-![Question 1](2.0/outputs/Question_1.png)
+**General conversation — Router node handles greetings without triggering RAG**
+![General Conversation](2.0/outputs/Question_1.png)
 
-![Question 2](2.0/outputs/Question_2.png)
+**Fund manager query — Accurate retrieval from factsheet context**
+![Fund Manager Query](2.0/outputs/Question_2.png)
 
-![Question 3](2.0/outputs/Question_3.png)
+**NAV trend query — Multi-month comparison across August, September & October 2024**
+![NAV Trend Query](2.0/outputs/Question_3.png)
 
 ---
 
