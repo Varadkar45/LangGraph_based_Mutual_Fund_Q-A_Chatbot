@@ -4,7 +4,7 @@ A conversational RAG chatbot that answers questions about HDFC Mutual Fund facts
 
 ---
 
-## 🏗️ Architecture — Corrective RAG with LangGraph
+## 🏗️ Architecture - Corrective RAG with LangGraph
 
 The pipeline is implemented as a **7-node LangGraph StateGraph** with two conditional branches and a retry loop:
 
@@ -24,19 +24,19 @@ START --> router --> [chat]  --> END
 | `generate` | Produces the final answer grounded in retrieved context |
 | `chat` | Handles general conversation without touching the vector store |
 
-This is **Corrective RAG** — if retrieval fails the relevance check, the query is rewritten and retrieval is retried before generating an answer.
+This is **Corrective RAG** - if retrieval fails the relevance check, the query is rewritten and retrieval is retried before generating an answer.
 
 ---
 
 ## ✨ Features
 
-- **Intelligent routing** — greetings and small talk handled naturally without triggering RAG
-- **Corrective RAG loop** — automatic query rewriting on retrieval failure (up to 2 retries)
-- **Multi-turn conversation** — chat history maintained across turns; follow-up questions resolved to standalone queries
-- **Accurate NAV retrieval** — dedicated NAV summary chunks extracted via regex from the two-column PDF layout, preventing portfolio text from dominating similarity search
-- **Per-source retrieval** — fetches from each of the 3 factsheets independently, guaranteeing all months appear in context
-- **LLM fallback** — Groq (primary) with local Ollama as fallback via `.with_fallbacks()`
-- **Styled Streamlit UI** — chat cards with Q/A layout, timestamps, and conversation history
+- **Intelligent routing** - greetings and small talk handled naturally without triggering RAG
+- **Corrective RAG loop** - automatic query rewriting on retrieval failure (up to 2 retries)
+- **Multi-turn conversation** - chat history maintained across turns; follow-up questions resolved to standalone queries
+- **Accurate NAV retrieval** - dedicated NAV summary chunks extracted via regex from the two-column PDF layout, preventing portfolio text from dominating similarity search
+- **Per-source retrieval** - fetches from each of the 3 factsheets independently, guaranteeing all months appear in context
+- **LLM fallback** - Groq (primary) with local Ollama as fallback via `.with_fallbacks()`
+- **Styled Streamlit UI** - chat cards with Q/A layout, timestamps, and conversation history
 
 ---
 
@@ -47,8 +47,8 @@ This is **Corrective RAG** — if retrieval fails the relevance check, the query
 | Orchestration | LangGraph (StateGraph) |
 | Vector Store | ChromaDB (persistent, local) |
 | Embeddings | snowflake-arctic-embed2 via Ollama |
-| LLM (primary) | Groq — LLaMA 3.3 70B Versatile |
-| LLM (fallback) | Ollama — gpt-oss:20b (local) |
+| LLM (primary) | Groq - LLaMA 3.3 70B Versatile |
+| LLM (fallback) | Ollama - gpt-oss:20b (local) |
 | PDF Parsing | PyMuPDF (fitz) |
 | UI | Streamlit |
 
@@ -127,16 +127,16 @@ LangGraph_based_Mutual_Fund_Q-A_Chatbot/
 
 ## 📸 Screenshots
 
-**Homepage — Streamlit UI with sidebar and chat input**
+**Homepage - Streamlit UI with sidebar and chat input**
 ![Homepage](2.0/outputs/homepage.png)
 
-**General conversation — Router node handles greetings without triggering RAG**
+**General conversation - Router node handles greetings without triggering RAG**
 ![General Conversation](2.0/outputs/Question_1.png)
 
-**Fund manager query — Accurate retrieval from factsheet context**
+**Fund manager query - Accurate retrieval from factsheet context**
 ![Fund Manager Query](2.0/outputs/Question_2.png)
 
-**NAV trend query — Multi-month comparison across August, September & October 2024**
+**NAV trend query - Multi-month comparison across August, September & October 2024**
 ![NAV Trend Query](2.0/outputs/Question_3.png)
 
 ---
